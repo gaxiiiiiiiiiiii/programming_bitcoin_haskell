@@ -25,9 +25,11 @@ source-repository head
 
 library
   exposed-modules:
+      Field
       Lib
       Point
       Sign
+      Utils
   other-modules:
       Paths_bitcoin
   hs-source-dirs:
