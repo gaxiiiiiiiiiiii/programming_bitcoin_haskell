@@ -2,6 +2,7 @@
 {-# LANGUAGE KindSignatures #-}
 {-# LANGUAGE ScopedTypeVariables #-}
 
+{-# LANGUAGE AllowAmbiguousTypes #-}
 module Point where
 
 import Field
@@ -27,6 +28,11 @@ mkP x y  =
         b = mkF $ natVal (Proxy :: Proxy a)
     in if y /*/ y  == (x /*/ x /*/ x) /+/ (a /*/ x) /+/ b
         then Just $ P x y else Nothing
+
+sqry :: forall a b p. (KnownNat a, KnownNat b, KnownNat p) => Field p -> Field p        
+sqry x = let a = mkF $ natVal (Proxy :: Proxy a)
+             b = mkF $ natVal (Proxy :: Proxy a) 
+         in (x /*/ x /*/ x) /+/ (a /*/ x) /+/ b
 
 
 

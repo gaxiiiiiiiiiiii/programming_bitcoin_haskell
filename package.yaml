@@ -23,6 +23,8 @@ dependencies:
 - base >= 4.7 && < 5
 - random
 - finite-field
+- bytestring
+- crypto-api
 
 library:
   source-dirs: src

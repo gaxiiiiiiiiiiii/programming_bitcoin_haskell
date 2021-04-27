@@ -3,7 +3,23 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 
 {-# OPTIONS_GHC -Wno-deferred-type-errors #-}
-module Sign where
+module Sign (
+    Fp,
+    G,
+    (\+\),
+    (\*\),
+    (\-\),
+    (\\\),
+    Seckey,
+    Pubkey,
+    Msg,
+    Sig,
+    mkPubkey,
+    verify,
+    sign,
+    g,gx,gy
+
+)where
 
 import Point ( Point(..), (|+|), (|*|) ) 
 import Field ( Field(..), mkF ) 
