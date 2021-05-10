@@ -1,6 +1,6 @@
 {-# LANGUAGE DataKinds #-}
 
-module Bitcoin.Protocol.VarStr where
+module VarStr where
 
 import Prelude hiding (length)
 

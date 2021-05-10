@@ -23,6 +23,15 @@ instance IsList (VarList a) where
     fromList xs = VarList (fromIntegral $ P.length xs) xs
     toList = elems
 
-    
+instance Binary a => Binary (VarList a) where
+    put x = do
+        put $ length x
+        mapM_ put $ elems x
+    get = do
+        size <- get
+        es <- replicateM (fromIntegral size) get
+        pure (VarList size es)            
+
+
 
 
