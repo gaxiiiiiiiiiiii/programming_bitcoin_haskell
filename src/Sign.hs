@@ -3,23 +3,7 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 
 {-# OPTIONS_GHC -Wno-deferred-type-errors #-}
-module Sign (
-    Fp,
-    G,
-    (\+\),
-    (\*\),
-    (\-\),
-    (\\\),
-    Seckey,
-    Pubkey,
-    Msg,
-    Sig,
-    mkPubkey,
-    verify,
-    sign,
-    g,gx,gy
-
-)where
+module Sign where
 
 import Point ( Point(..), (|+|), (|*|) ) 
 import Field ( Field(..), mkF ) 
@@ -63,8 +47,8 @@ f \\\ h = f \*\ inv h
 
 data Seckey = Sec Fp deriving Eq
 data Pubkey = Pub G deriving Eq
-data Sig = Sig Fp Fp
-data Msg = Msg Fp
+data Sig = Sig Fp Fp deriving Eq 
+data Msg = Msg Fp deriving Eq
 
 instance Show Seckey where
     show (Sec k) = show k
